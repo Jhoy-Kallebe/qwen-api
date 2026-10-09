@@ -8,7 +8,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-OLLAMA_URL = "http://host.docker.internal:11434/api/chat"
+OLLAMA_URL = "http://host.minikube.internal:11434/api/chat"
 MODEL = "qwen2.5:3b"
 
 
@@ -33,7 +33,7 @@ def root():
 def health():
     try:
         response = requests.get(
-            "http://host.docker.internal:11434/api/tags",
+            "http://host.minikube.internal:11434/api/tags",
             timeout=5
         )
 
